@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-logged',
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './logged.html',
   styleUrl: './logged.scss'
 })

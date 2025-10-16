@@ -1,1 +1,10 @@
-<p>contact-list-item works!</p>
+<li [class.favorite]="contact().isFavorite === true">
+    <span>{{contact().firstName}} {{contact().lastName}}</span>
+    <span>{{contact().number}}</span>
+    <span>{{contact().email}}</span>
+    <span>
+        <button>
+            Borrar
+        </button>
+    </span>
+</li>

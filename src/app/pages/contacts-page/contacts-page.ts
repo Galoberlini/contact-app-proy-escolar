@@ -1,7 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ContactListItem } from '../../components/contact-list-item/contact-list-item';
-import { Contact, NewContact } from '../../interfaces/contacts';
 import { AuthService } from '../../services/auth-service';
 import { ContactsService } from '../../services/contacts-service';
 import { FormsModule } from '@angular/forms';
