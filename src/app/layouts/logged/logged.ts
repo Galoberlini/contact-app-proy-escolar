@@ -8,5 +8,4 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './logged.scss'
 })
 export class Logged {
-
 }
