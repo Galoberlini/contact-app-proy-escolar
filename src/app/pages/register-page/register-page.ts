@@ -13,6 +13,7 @@ import { NewUser } from '../../interfaces/user';
 export class RegisterPage {
   errorRegister = false;
   usersService = inject(UsersService);
+  isLoading = false;
   router = inject(Router);
 
   async register(form: NgForm) {
@@ -28,10 +29,12 @@ export class RegisterPage {
       this.errorRegister = true;
       return;
     }
+    this.isLoading = true;
     const res: Response = await this.usersService.register(form.value as NewUser);
     if (res.ok) {
       this.router.navigate(['/login']);
     }
+    this.isLoading = false;
     this.errorRegister = true;
   }
 }

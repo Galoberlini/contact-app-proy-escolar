@@ -37,6 +37,9 @@
       }
     </div>
     <button [disabled]="isLoading || registerForm.invalid">Iniciar sesión</button>
+    @if(isLoading){
+      <app-spinner></app-spinner>
+    }
     @if (errorRegister) {
       <p class="error">Error indeterminado, intente nuevamente.</p>
     } 
