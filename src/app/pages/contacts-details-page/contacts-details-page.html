@@ -1,56 +1,19 @@
-<!-- Data de contacto sera displayeada aqui -->
-<section>
-    <header>
-        <h1>Detalle de contacto</h1>
-        <p></p>
-    </header>
-
-    <div>
-        <span>Nombre</span>
-        <span>Telefono</span>
-        <span>Email</span>
-        <span>Grupos</span>
-        <span>Acciones</span>
-    </div>
-    <ul>
-    </ul>
-
-    <section>
-        <h2>Editar contacto</h2>
-        <form>
-            <div>
-                <label for="first-name">Nombre*</label>
-                <input id="first-name" name="firstName" type="text" />
-            </div>
-            <div>
-                <label for="last-name">Apellido</label>
-                <input id="last-name" name="lastName" type="text" />
-            </div>
-            <div>
-                <label for="phone">Telefono*</label>
-                <input id="phone" name="number" type="text" />
-            </div>
-            <div>
-                <label for="email">Email</label>
-                <input id="email" name="email" type="email" />
-            </div>
-            <div>
-                <label for="favourite">Favorito</label>
-                <input id="favourite" name="isFavourite" type="checkbox" />
-            </div>
-            <div>
-                <label for="address">direccion</label>
-                <input id="address" name="address" type="text" />
-            </div>
-            <div>
-                <label for="company">Compania</label>
-                <input id="company" name="company" type="text" />
-            </div>
-            <div>
-                <label for="image">URL Imagen</label>
-                <input id="image" name="image" type="text" />
-            </div>
-            <button type="submit">Guardar cambios</button>
-        </form>
-    </section>
-</section>
+@if(cargandoContacto){
+  <p>Cargando contacto...</p>
+} @else if(!contacto) {
+  <p>No se encontró el contacto</p>
+} @else {
+  <h1>{{contacto!.firstName}} {{contacto!.lastName}}</h1>
+  <p>Email: {{contacto.email}}</p>
+  <p>Teléfono: {{contacto.number}}</p>
+@if (contacto.isFavorite) {
+  <p>⭐</p>
+  <button (click)="toggleFavorite()">Desmarcar favorito</button>
+} @else {
+  <button (click)="toggleFavorite()">Marcar como favorito</button>
+}
+  <p>
+    <a [routerLink]="['/contacts',idContacto(),'edit']">Editar</a>
+  </p>
+  <button (click)="deleteContact()">Eliminar</button>
+}

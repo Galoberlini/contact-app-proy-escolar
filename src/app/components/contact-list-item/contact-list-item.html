@@ -2,9 +2,14 @@
     <span>{{contact().firstName}} {{contact().lastName}}</span>
     <span>{{contact().number}}</span>
     <span>{{contact().email}}</span>
+    <span>-</span>
     <span>
-        <button>
-            Borrar
-        </button>
+        <button (click)="openDeleteModal()">Borrar</button>
+        <a [routerLink]="['/contacts',contact().id,'edit']">Editar</a>
+    </span>
+    <span>
+        @if (contact().isFavorite === true) {
+            ⭐
+        }
     </span>
 </li>

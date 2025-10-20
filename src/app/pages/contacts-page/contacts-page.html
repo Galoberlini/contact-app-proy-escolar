@@ -1,39 +1,16 @@
-<section>
-    <header>
-        <h1>Agenda de contactos</h1>
-        <p></p>
-    </header>
-
-    <div>
-        <div>
-            <span>Nombre</span>
-            <span>Teléfono</span>
-            <span>Email</span>
-            <span>Grupos</span>
-            <span>Acciones</span>
-        </div>
-    </div>
-
-    <section>
-        <h2>Nuevo contacto</h2>
-        <form>
-            <label>
-                Nombre
-                <input type="text" />
-            </label>
-            <label>
-                Teléfono
-                <input type="tel" />
-            </label>
-            <label>
-                Email
-                <input type="email" />
-            </label>
-            <label>
-                Es favorito
-                <input type="checkbox" />
-            </label>
-            <button type="submit">Guardar contacto</button>
-        </form>
-    </section>
-</section>
+<!-- <a routerLink="login">Ir a login</a> -->
+<div>
+  <span>Nombre</span>
+  <span>Telefono</span>
+  <span>Email</span>
+  <span>Grupos</span>
+  <span>Acciones</span>
+</div>
+<ul>
+  @for (contactoIndividual of contactsService.contacts; track $index) {
+    <a [routerLink]="['/contacts',contactoIndividual.id]">
+      <app-contact-list-item [contact]="contactoIndividual"></app-contact-list-item>
+    </a>
+  }
+</ul>
+<a routerLink="/contacts/new">+</a>
