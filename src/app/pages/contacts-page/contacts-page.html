@@ -1,16 +1,25 @@
-<!-- <a routerLink="login">Ir a login</a> -->
-<div>
-  <span>Nombre</span>
-  <span>Telefono</span>
-  <span>Email</span>
-  <span>Grupos</span>
-  <span>Acciones</span>
+<div class="contacts-header">
+  <h1>Contactos</h1>
+  <a routerLink="/contacts/new" class="btn btn-primary">Nuevo contacto</a>
 </div>
-<ul>
-  @for (contactoIndividual of contactsService.contacts; track $index) {
-    <a [routerLink]="['/contacts',contactoIndividual.id]">
+
+<div class="contacts-table">
+  <div class="contacts-table-header">
+    <div class="contact-col-name">Nombre</div>
+    <div class="contact-col-phone">Teléfono</div>
+    <div class="contact-col-email">Email</div>
+    <div class="contact-col-address">Dirección</div>
+    <div class="contact-col-company">Compañía</div>
+    <div class="contact-col-actions">Acciones</div>
+  </div>
+  <div class="contacts-table-body">
+    @for (contactoIndividual of contactsService.contacts; track contactoIndividual.id) {
       <app-contact-list-item [contact]="contactoIndividual"></app-contact-list-item>
-    </a>
-  }
-</ul>
-<a routerLink="/contacts/new">+</a>
+    }
+    @empty {
+      <div class="empty-state">
+        <p class="text-muted">No hay contactos. Crea tu primer contacto.</p>
+      </div>
+    }
+  </div>
+</div>

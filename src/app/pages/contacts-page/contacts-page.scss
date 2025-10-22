@@ -1,3 +1,35 @@
-.favorite {
-    font-weight: bold;
+.contacts-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.contacts-table {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.contacts-table-header {
+    display: grid;
+    grid-template-columns: 1.5fr 1.2fr 1.5fr 1.5fr 1.2fr 1.3fr;
+    gap: 16px;
+    padding: 16px 24px;
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+    font-weight: 600;
+    color: var(--color-text-muted);
+    font-size: 14px;
+}
+
+.contacts-table-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.empty-state {
+    padding: 48px 24px;
+    text-align: center;
 }

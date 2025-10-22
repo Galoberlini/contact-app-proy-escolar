@@ -1,0 +1,18 @@
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 32px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}

@@ -32,7 +32,6 @@ export class NewEditContact implements OnInit {
           image: this.contactoOriginal.image,
           number: this.contactoOriginal.number,
           company: this.contactoOriginal.company,
-          isFavourite: this.contactoOriginal.isFavorite
         });
       }
     }
@@ -48,7 +47,7 @@ export class NewEditContact implements OnInit {
       image: form.value.image,
       number: form.value.number,
       company: form.value.company,
-      isFavorite: form.value.isFavourite
+      isFavorite: false
     };
     let res: Contact | undefined;
     this.isLoading = true;
